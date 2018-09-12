@@ -1,6 +1,6 @@
 #!/bin/bash
 PS3='Run on all folders containing Gemfile.lock: '
-options=("brakeman" "bundler audit" "hakiri prime" "hakiri scan" "Quit")
+options=("brakeman" "bundler_audit" "hakiri_prime" "hakiri_scan" "Quit")
 
 run_command () {
     for i in `ls -d */Gemfile.lock`
@@ -23,17 +23,17 @@ do
             cmd='brakeman -A -o brakeman.report'
             break
             ;;
-        "bundler audit")
+        "bundler_audit")
             echo "running BUNDLER AUDIT"
             cmd='bundler audit'
             break
             ;;
-        "hakiri priming")
+        "hakiri_prime")
             echo "generating DEFAULT manifest for HAKIRI"
             cmd='hakiri manifest:generate'
             break
             ;;
-        "hakiri scan")
+        "hakiri_scan")
             echo "running HAKIRI"
             cmd='hakiri system:scan'
             break
